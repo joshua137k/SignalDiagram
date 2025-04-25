@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignalDiagram</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input type="file" id="loadInput" style="display:none">
+  <div id="controls">
+
+    <div class="dropdown">
+        <button id="fileButton">File ▼</button>
+        <div class="dropdown-content">
+          <button id="saveButton">Save</button>
+          <button id="loadButton">Load</button>
+          <button id="fileHelpButton">?</button>
+        </div>
+      </div>
+      
+    <button id="addButton" title="Adicionar círculo (Atalho: A)">Adicionar Círculo (A)</button>
+    <button id="deleteButton" title="Deletar círculo selecionado (Atalho: Del)">Deletar Círculo (Del)</button>
+    <button id="deleteEdgeButton" title="Deletar ligação selecionada (Atalho: Del)">Deletar Ligação (Del)</button>
+    <button id="linkButton" style="display:none;" title="Criar ligação (Atalho: L)">Criar Ligação (L)</button>
+    <button id="masonButton" >MASON</button>
+    
+    
+    
+  </div>
+  <canvas id="canvas"></canvas>
+
+  <div id="modalOverlay" class="overlay">
+    <div id="modalBox" class="box">
+      <h2 id="modalTitle"></h2>
+      <input id="modalInput" type="text" />
+      <div class="buttons">
+        <button id="modalCancel">Cancelar</button>
+        <button id="modalOk">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="helpOverlay" class="overlay">
+    <div id="helpBox" class="box">
+      <h2>Ajuda / Atalhos</h2>
+      <ul>
+        <li><strong>Shift + Clique</strong>: selecionar/desselecionar círculos (destacado em amarelo).</li>
+        <li><strong>A</strong>: modo Adicionar Círculo.</li>
+        <li><strong>L</strong>: Criar ligação entre dois círculos selecionados.</li>
+        <li><strong>Del / Backspace</strong>: Deletar círculos selecionados ou ligação ativa.</li>
+        <li><strong>Duplo clique</strong>: editar label do círculo.</li>
+        <li><strong>Arrastar</strong>: mover círculo; arrastar handle (bolinha) ajusta curvatura da ligação.</li>
+        <li><strong>Click na ligação</strong>: seleciona ligação para ajuste/deleção.</li>
+      </ul>
+
+      <button id="helpClose" class="close">Fechar</button>
+      
+    </div>
+  </div>
+
+
+  <div id="scriptModalOverlay" class="overlay" >
+    <div id="scriptModalBox" class="box">
+        <h2>Script MATLAB</h2>
+        <textarea id="scriptTextArea" readonly style="width:100%; height:300px; font-family: monospace;"></textarea>
+        <div class="buttons">
+        <button id="scriptClose">Fechar</button>
+        </div>
+    </div>
+  </div>
+
+  <script src="js/models.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/mason.js"></script>
+</body>
+</html>
